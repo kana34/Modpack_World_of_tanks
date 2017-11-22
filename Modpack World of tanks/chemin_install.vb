@@ -8,7 +8,7 @@
         Close()
         Modpack.Close()
     End Sub
-    Private Sub Parcourir_Click(sender As Object, e As EventArgs) Handles Parcourir.Click
+    Private Sub Parcourir_Click(sender As Object, e As EventArgs)
         dialog.RootFolder = Environment.SpecialFolder.MyComputer
         dialog.SelectedPath = "C:\Games\World_of_Tanks"
         dialog.Description = "Selection dossier installation de World of tanks"
@@ -29,7 +29,7 @@
         End If
     End Sub
 
-    Private Sub suivant_Click(sender As Object, e As EventArgs) Handles Suivant.Click
+    Private Sub suivant_Click(sender As Object, e As EventArgs)
         My.Settings.path_install = dialog.SelectedPath
         My.Settings.Save()
         Close()

@@ -97,7 +97,6 @@ Public Class Modpack
 
     Private Sub Bouton_install_ts3_Click(sender As Object, e As EventArgs) Handles Bouton_instal_ts3.Click
         DirDesktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
-
         client = New WebClient
 
         AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
@@ -129,9 +128,8 @@ Public Class Modpack
         Process.Start("ts3server://" + My.Settings.lien_ts3)
     End Sub
 
-    '------------------------------------------------------
-    'Affichage de la progressbar et extraction de l'archive
-    '------------------------------------------------------
+    '--- Affichage de la progressbar et extraction de l'archive ---
+    '--------------------------------------------------------------
     Private Sub client_ProgressChanged(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
         bytesIn = Double.Parse(e.BytesReceived.ToString())
         totalBytes = Double.Parse(e.TotalBytesToReceive.ToString())
@@ -144,8 +142,6 @@ Public Class Modpack
         download.Hide()
         Me.Show()
     End Sub
-
-
 
     '--- Fonction check internet ---
     '-------------------------------
